@@ -715,14 +715,7 @@ COMMIT;
 -- Total Procedures: 3
 -- Total Events: 2
 -- 
--- Initial Setup Complete!
--- 
--- IMPORTANT: Change default admin password immediately!
--- Default credentials:
---   Username: admin
---   Password: changeme123
---   Email: admin@example.com
--- 
--- Generate a new password hash:
---   php -r "echo password_hash('YOUR_PASSWORD', PASSWORD_DEFAULT);"
+-- Initial setup complete.
+-- No administrator account is seeded. Create the first administrator through
+-- a protected setup process and assign a unique password.
 -- ========================================

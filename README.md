@@ -119,12 +119,18 @@ $password = 'your-password';
 
 ### 5. File Permissions
 ```bash
+mkdir -p uploads/coach_videos uploads/coach_resumes uploads/discount_ids uploads/profile_images uploads/video_thumbnails
 chmod 755 uploads/
 chmod 755 uploads/coach_videos/
 chmod 755 uploads/coach_resumes/
 chmod 755 uploads/discount_ids/
+chmod 755 uploads/profile_images/
 chmod 755 uploads/video_thumbnails/
 ```
+
+Uploaded files are runtime data and must not be committed to Git. Store real
+identity documents, resumes, profile photos, payment codes, and videos outside
+the public web root whenever possible.
 
 ## ⚙️ Configuration
 

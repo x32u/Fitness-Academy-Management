@@ -27,9 +27,10 @@ config/api_config.php
 ehthumbs.db
 Thumbs.db
 
-# Upload directories (may contain user data)
-uploads/user_*
-uploads/temp/
+# User uploads and generated media may contain personal or financial data.
+# The upload directory keeps only its own ignore rules in source control.
+uploads/**
+!uploads/.gitignore
 
 # Cache directories
 cache/

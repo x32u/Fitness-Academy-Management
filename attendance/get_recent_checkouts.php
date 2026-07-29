@@ -70,18 +70,19 @@ try {    // Get recent check-outs from today
         'count' => count($formatted_checkouts)
     ]);
 
+} catch (PDOException $e) {
+    error_log("Database error getting recent check-outs: " . $e->getMessage());
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Database error occurred',
+        'checkouts' => []
+    ]);
 } catch (Exception $e) {
     error_log("Error getting recent check-outs: " . $e->getMessage());
     echo json_encode([
         'success' => false,
         'message' => 'Error loading recent check-outs',
-        'checkouts' => []
-    ]);
-} catch (PDOException $e) {
-    error_log("Database error getting recent check-outs: " . $e->getMessage());
-    echo json_encode([
-        'success' => false,
-        'message' => 'Database error occurred',
         'checkouts' => []
     ]);
 }

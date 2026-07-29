@@ -169,17 +169,18 @@ try {
         'profile_image' => $member['ProfileImage'] ?? null
     ]);
 
+} catch (PDOException $e) {
+    error_log("Database error in check-out: " . $e->getMessage());
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Database error occurred'
+    ]);
 } catch (Exception $e) {
     error_log("Check-out error: " . $e->getMessage());
     echo json_encode([
         'success' => false,
         'message' => $e->getMessage()
-    ]);
-} catch (PDOException $e) {
-    error_log("Database error in check-out: " . $e->getMessage());
-    echo json_encode([
-        'success' => false,
-        'message' => 'Database error occurred'
     ]);
 }
 ?>

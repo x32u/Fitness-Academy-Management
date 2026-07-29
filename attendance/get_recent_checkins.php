@@ -56,18 +56,19 @@ try {
         'count' => count($formatted_checkins)
     ]);
 
+} catch (PDOException $e) {
+    error_log("Database error getting recent check-ins: " . $e->getMessage());
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Database error occurred',
+        'checkins' => []
+    ]);
 } catch (Exception $e) {
     error_log("Error getting recent check-ins: " . $e->getMessage());
     echo json_encode([
         'success' => false,
         'message' => 'Error loading recent check-ins',
-        'checkins' => []
-    ]);
-} catch (PDOException $e) {
-    error_log("Database error getting recent check-ins: " . $e->getMessage());
-    echo json_encode([
-        'success' => false,
-        'message' => 'Database error occurred',
         'checkins' => []
     ]);
 }

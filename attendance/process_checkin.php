@@ -223,17 +223,18 @@ try {
         'is_active' => ($member['IsActive'] == 1 && $member['account_status'] == 'active')
     ]);
 
+} catch (PDOException $e) {
+    error_log("Database error in check-in: " . $e->getMessage());
+    http_response_code(500);
+    echo json_encode([
+        'success' => false,
+        'message' => 'Database error occurred'
+    ]);
 } catch (Exception $e) {
     error_log("Check-in error: " . $e->getMessage());
     echo json_encode([
         'success' => false,
         'message' => $e->getMessage()
-    ]);
-} catch (PDOException $e) {
-    error_log("Database error in check-in: " . $e->getMessage());
-    echo json_encode([
-        'success' => false,
-        'message' => 'Database error occurred'
     ]);
 }
 ?>

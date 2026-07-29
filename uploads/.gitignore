@@ -1,0 +1,4 @@
+# Never commit runtime uploads. These can include identity documents, resumes,
+# profile photos, payment records, and videos.
+*
+!.gitignore

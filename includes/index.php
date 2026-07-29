@@ -1580,7 +1580,7 @@ html {
   <section class="features">
   <div class="features-container">
     <div class="feature-card" data-modal="personal-training-modal" style="cursor: pointer;">
-      <img src="../assets/images/coaches.jpeg" alt="Personal Training" class="feature-image">
+      <img src="../assets/images/md.jpeg" alt="Gym equipment for personal training" class="feature-image">
       <div class="feature-content">
         <h3 class="feature-title">PERSONAL TRAINING</h3>
         <p class="feature-text">Achieve more with a Personal Trainer - Personalized, Motivating, Effective.</p>
@@ -1612,7 +1612,7 @@ html {
 <div id="personal-training-modal" class="modal">
   <div class="modal-content">
     <span class="modal-close">&times;</span>
-    <img src="../assets/images/coaches.jpeg" alt="Personal Training" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
+    <img src="../assets/images/md.jpeg" alt="Gym equipment for personal training" style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
     <h3>Personal Training</h3>
     <p>Achieve more with a Personal Trainer who provides personalized, motivating, and effective guidance tailored to your needs. Our expert trainers focus on creating customized programs that align with your fitness goals and lifestyle. With one-on-one sessions, you'll receive dedicated attention to improve your technique and maximize results. Whether you're a beginner or an experienced athlete, our trainers are here to support your journey to better health and wellness.</p>
   </div>

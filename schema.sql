@@ -486,16 +486,10 @@ CREATE TABLE `user_discounts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ========================================
--- Default Admin User (TEMPLATE)
+-- Administrator setup
 -- ========================================
--- IMPORTANT: Generate your own password hash using PHP:
--- php -r "echo password_hash('YOUR_SECURE_PASSWORD', PASSWORD_DEFAULT);"
--- 
--- The hash below is for: 'changeme123' (CHANGE IMMEDIATELY AFTER SETUP!)
--- ========================================
-
-INSERT INTO `users` (`UserID`, `Username`, `PasswordHash`, `Email`, `Role`, `First_Name`, `Last_Name`, `IsActive`, `is_approved`, `email_confirmed`, `account_status`) VALUES
-(1, 'admin', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', 'admin@example.com', 'Admin', 'System', 'Administrator', 1, 1, 1, 'active');
+-- No default administrator is created by this schema. Create the first
+-- administrator through a protected setup process and use a unique password.
 
 -- ========================================
 -- Sample Membership Plans
@@ -721,14 +715,7 @@ COMMIT;
 -- Total Procedures: 3
 -- Total Events: 2
 -- 
--- Initial Setup Complete!
--- 
--- IMPORTANT: Change default admin password immediately!
--- Default credentials:
---   Username: admin
---   Password: changeme123
---   Email: admin@example.com
--- 
--- Generate a new password hash:
---   php -r "echo password_hash('YOUR_PASSWORD', PASSWORD_DEFAULT);"
+-- Initial setup complete.
+-- No administrator account is seeded. Create the first administrator through
+-- a protected setup process and assign a unique password.
 -- ========================================

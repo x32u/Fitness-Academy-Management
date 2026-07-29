@@ -24,13 +24,12 @@ $qr_code = $input['qr_code'] ?? '';
 $user_agent = $input['user_agent'] ?? '';
 $client_timestamp = $input['timestamp'] ?? '';
 
-$scanner_user_id = $_SESSION['user_id'];
-$scanner_role = $_SESSION['role'];
-
-// For kiosk mode, use system scanner ID
 if ($is_kiosk_mode) {
     $scanner_user_id = 1; // System/admin user for kiosk scans
     $scanner_role = 'system';
+} else {
+    $scanner_user_id = (int) $_SESSION['user_id'];
+    $scanner_role = $_SESSION['role'] ?? 'unknown';
 }
 
 if (empty($qr_code)) {
